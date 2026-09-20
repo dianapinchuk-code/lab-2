@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота 2: Дослідження CSS</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      padding: 2rem;
+      background-color: #f8fafc;
+      color: #334155;
+    }
+    section {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    h2 { margin-top: 0; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+
+    .box {
+      width: 250px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid #2563eb;
+      margin-bottom: 10px;
+      background-color: #dbeafe;
+    }
+    .box-content { box-sizing: content-box; }
+    .box-border  { box-sizing: border-box; }
+
+    .cascade-test { color: green; }
+    .cascade-test { color: crimson; }
+
+    p.spec-target { color: orange; }                        
+    .c1.c2.c3.c4.c5.c6.c7.c8.c9.c10.c11.spec-target { color: purple; } 
+    #unique-id { color: blue; }                             
+
+    /* 4.4 Inheritance */
+    .inherit-demo {
+      font-family: "Courier New", monospace;
+      color: #7c3aed;
+    }
+    .btn-fixed {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    :root {
+      --card-bg: #ffffff;
+      --card-text: #1e293b;
+      --card-accent: #0284c7;
+    }
+    .var-card {
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      border: 2px solid var(--card-accent);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    /* Локальний scope - перевизначення змінних */
+    .var-card.dark-card {
+      --card-bg: #0f172a;
+      --card-text: #f8fafc;
+      --card-accent: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Дослідження базових концепцій CSS</h1>
+
+  <section>
+    <h2>4.1. Box Model</h2>
+    <div class="box box-content">content-box (250 + 20*2 + 5*2 = 300px)</div>
+    <div class="box box-border">border-box (Рівно 250px)</div>
+  </section>
+
+  <section>
+    <h2>4.2. The Cascade</h2>
+    <p class="cascade-test">Цей текст має бути червоним (crimson), бо це правило описане нижче за зелене.</p>
+  </section>
+
+  <section>
+    <h2>4.3. Specificity</h2>
+    <p id="unique-id" class="c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 spec-target">
+      Якого я кольору? (Синій ID перемагає навіть 12 класів поспіль).
+    </p>
+  </section>
+
+  <section class="inherit-demo">
+    <h2>4.4. Inheritance</h2>
+    <p>Абзац &lt;p&gt; успадкував Courier New та фіолетовий колір.</p>
+    <a href="#">Посилання &lt;a&gt;</a> (успадкувало шрифт, але колір перебитий User-Agent браузера).<br><br>
+    <button>Звичайна кнопка &lt;button&gt;</button> (має власні системні шрифти й колір).
+    <button class="btn-fixed">Кнопка з inherit</button>
+  </section>
+
+  <section>
+    <h2>4.5. CSS Custom Properties (Variables)</h2>
+    <div class="var-card">Світла картка (значення з :root)</div>
+    <div class="var-card dark-card">Темна картка (перевизначені змінні в межах .dark-card)</div>
+  </section>
+
+</body>
+</html>
