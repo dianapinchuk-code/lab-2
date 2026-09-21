@@ -3,66 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тарифи</title>
+  <title>Наші тарифи</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="pricing">
-    <h1 class="title">Наші тарифи</h1>
-    
-    <div class="cards">
-      <div class="card">
-        <h2>Базовий</h2>
-        <p class="price">$0 <span>/міс</span></p>
-        <ul>
-          <li>1 користувач</li>
-          <li>3 проєкт</li>
-          <li>Обмежена підтримка</li>
-          <li>Доступ до базових функцій</li>
-          <li>Обмежене сховище</li>
-          <li>Обмежена аналітика</li>
-        </ul>
-        <button class="btn">Обрано</button>
-      </div>
 
-      <div class="card card-popular">
-        <h2>Стандарт</h2>
-        <p class="price">$15 <span>/міс</span></p>
-        <ul>
-          <li>5 користувачів</li>
-          <li>15 проєктів</li>
-          <li>Підтримка 24/7</li>
-          <li>Доступ до всіх функцій</li>
-          <li>Розширене сховище</li>
-          <li>Розширена аналітика</li>
-        </ul>
-        <button class="btn btn-primary">Популярний</button>
-      </div>
+  <section class="pricing-section">
+    <div class="pricing-container">
+      
+      <header class="section-header">
+        <h1 class="section-title">Наші тарифи</h1>
+        <p class="section-subtitle">Оберіть план, який найкраще підходить для ваших завдань</p>
+      </header>
 
-      <div class="card">
-        <h2>Преміум</h2>
-        <p class="price">$30 <span>/міс</span></p>
-        <ul>
-          <li>Безліміт людей</li>
-          <li>Безліміт проєктів</li>
-          <li>Преміум підтримка</li>
-          <li>Доступ до всіх функцій</li>
-          <li>Безлімітне сховище</li>
-          <li>Безлімітна аналітика</li>
-        </ul>
-        <button class="btn">Обрати</button>
+      <div class="pricing-grid">
+        
+        <article class="card">
+          <div class="card-header">
+            <span class="plan-name">BASIC</span>
+            <div class="plan-price">
+              <span class="amount">$10</span>
+              <span class="period">/ month</span>
+            </div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check">✓</span> 1 User</li>
+            <li><span class="check">✓</span> 5GB Storage</li>
+            <li><span class="check">✓</span> Basic Support</li>
+          </ul>
+          <button class="btn btn-outline">Select</button>
+        </article>
+
+        <article class="card card-active">
+          <div class="badge">PRO • ACTIVE</div>
+          <div class="card-header">
+            <span class="plan-name">PRO</span>
+            <div class="plan-price">
+              <span class="amount">$29</span>
+              <span class="period">/ month</span>
+            </div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check">✓</span> 5 Users</li>
+            <li><span class="check">✓</span> 50GB Storage</li>
+            <li><span class="check">✓</span> Priority Support</li>
+          </ul>
+          <button class="btn btn-primary">Get Started</button>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <span class="plan-name">ENTERPRISE</span>
+            <div class="plan-price">
+              <span class="amount">$99</span>
+              <span class="period">/ month</span>
+            </div>
+          </div>
+          <ul class="features-list">
+            <li><span class="check">✓</span> Unlimited</li>
+            <li><span class="check">✓</span> 1TB Storage</li>
+            <li><span class="check">✓</span> 24/7 Support</li>
+          </ul>
+          <button class="btn btn-outline">Contact</button>
+        </article>
+
       </div>
     </div>
-     <section class="experiments">
-    <h2>Міні-досліди для DevTools</h2>
-    
-    <!-- Box Model: порівняння двох блоків -->
-    <div class="box-content">content-box (ширший)</div>
-    <div class="box-border">border-box (акуратний)</div>
-
-    <p id="my-id" class="my-class">Цей текст синій</p>
   </section>
-
 </body>
 </html>
-  
